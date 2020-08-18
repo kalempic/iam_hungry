@@ -1,0 +1,11 @@
+
+<ion-content>
+<ion-list *ngIf="jela.length > 0">
+  <app-jelo *ngFor="let jelo of jela" [jelo]="jelo"></app-jelo>
+</ion-list>
+  <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button #cart>
+      <ion-icon name="cart" class="cart-icon" (click)="idiNaPlacanje()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

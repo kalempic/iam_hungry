@@ -1,0 +1,42 @@
+
+<ion-app>
+  <ion-menu side="start" contentId="menuContent">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Dobrodošli Katarina!
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/restaurants">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Restorani</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/cart">
+            <ion-icon name="cart-outline" slot="start"></ion-icon>
+            <ion-label>Moja Korpa</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/orders">
+            <ion-icon name="list-outline" slot="start"></ion-icon>
+            <ion-label>Moje Porudžbine</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" (click)="onLogout()" button>
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Odjava</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="menuContent"></ion-router-outlet>
+</ion-app>

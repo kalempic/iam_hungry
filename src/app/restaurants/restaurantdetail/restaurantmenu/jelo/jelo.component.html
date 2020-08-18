@@ -1,0 +1,48 @@
+<ion-item>
+    <ion-avatar slot="start">
+        <ion-img src="{{jelo.slika}}"></ion-img>
+    </ion-avatar>
+
+    <ion-grid>
+        <ion-row class="ion-align-items-center">
+            <ion-col size="4">
+
+                <ion-label class="ion-text-wrap"> {{jelo.naziv}} </ion-label>
+            </ion-col>
+            <ion-col size="4">
+                <ion-label class="ion-text-wrap">Cena: {{jelo.cena}}</ion-label>
+            </ion-col>
+
+
+            <ion-col size="4">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-label class="ion-text-center">Kolicina:
+                            </ion-label>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="ion-justify-content-center ion-align-items-center">
+                        <ion-col size="4">
+                            <ion-button color="medium" fill="clear" (click)="oduzmiJelo()">
+                                <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+
+                        <ion-col size="4">
+                            <div class="ion-text-center">{{jelo.kolicina}}</div>
+                        </ion-col>
+
+                        <ion-col size="4">
+                            <ion-button color="medium" fill="clear" (click)="dodajJelo()">
+                                <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-item>

@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title> Porudžbine</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let order of ordersLista; let i=index" [color]="i%2? 'medium' : 'light'">
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-row class="naslov">
+                            Restoran:
+                        </ion-row>
+                        <ion-row>{{order.restoranNaziv}}
+                        </ion-row>
+                        <ion-row class="naslov" *ngIf="order.predjela.length != 0">
+                            Predjela:
+                        </ion-row>
+                        <ion-row *ngIf="order.predjela.length != 0">
+                                    <span *ngFor="let jelo of order.predjela; let i = index;">
+    {{jelo.naziv}}&nbsp;X&nbsp;{{jelo.kolicina}}{{ispisiZarez(i, order.predjela)}}
+  </span>
+                        </ion-row>
+                        <ion-row class="naslov" *ngIf="order.glavnaJela.length != 0">
+                            Jela:
+                        </ion-row>
+                        <ion-row *ngIf="order.glavnaJela.length != 0">
+                                    <span *ngFor="let jelo of order.glavnaJela; let i = index;">
+        {{jelo.naziv}}&nbsp;X&nbsp;{{jelo.kolicina}}{{ispisiZarez(i, order.glavnaJela)}}
+  </span>
+                        </ion-row>
+                        <ion-row class="naslov" *ngIf="order.glavnaJela.length != 0">
+                            Dezerti:
+                        </ion-row>
+                        <ion-row *ngIf="order.dezerti.length != 0">
+                                    <span *ngFor="let jelo of order.dezerti; let i = index;">
+        {{jelo.naziv}}&nbsp;X&nbsp;{{jelo.kolicina}}{{ispisiZarez(i, order.dezerti)}}
+  </span>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-grid>
+                            <ion-row class="naslov">
+                                Datum: porudzbine:
+                            </ion-row>
+                            <ion-row>
+                                <ion-label>{{ this.datePipe.transform(order.vreme, 'short')}}</ion-label>
+                            </ion-row>
+                            <ion-row class="naslov">
+                                Ukupna cena:
+                            </ion-row>
+                            <ion-row>
+                                <ion-label>{{order.ukupnaCena}} din</ion-label>
+                            </ion-row>
+                            <ion-row class="ion-padding-top">
+                                <ion-button>Poruči ponovo</ion-button>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-item>
+    </ion-list>
+</ion-content>

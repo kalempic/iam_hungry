@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>RESTORANI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list *ngIf="!isLoading && restoraniLista.length > 0">
+  <app-restaurant-item *ngFor="let restoran of restoraniLista" [restoran]="restoran" ></app-restaurant-item>
+</ion-list>
+</ion-content>

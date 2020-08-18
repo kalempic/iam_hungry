@@ -1,0 +1,7 @@
+{
+  "name": "diplomski",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

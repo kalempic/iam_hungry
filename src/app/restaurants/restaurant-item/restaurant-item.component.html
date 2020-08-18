@@ -1,0 +1,14 @@
+<ion-item [routerLink]="['/', 'restaurants', 'restaurantdetail', restoran.id]">
+    <ion-avatar slot="start">
+        <ion-img src="{{restoran.slika}}"></ion-img>
+    </ion-avatar>
+    <ion-label> {{restoran.naziv}}</ion-label>
+    <ion-grid>
+        <ion-row>
+            <ion-label>Ocena: {{restoran.ocena}}</ion-label>
+        </ion-row>
+        <ion-row>
+            <ion-label>{{restoran.vrsta}}</ion-label>
+        </ion-row>
+    </ion-grid>
+</ion-item>

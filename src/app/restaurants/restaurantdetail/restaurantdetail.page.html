@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar  color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title *ngIf="!isLoading && restoran!= null">{{restoran.naziv}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-tabs>
+        <ion-tab-bar slot="top">
+            <ion-tab-button tab="restaurantmenu/predjela" layout="icon-bottom">
+                <ion-label>Predjela</ion-label>
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="restaurantmenu/jela" layout="icon-bottom">
+                <ion-label>Glavna jela</ion-label>
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="restaurantmenu/dezerti" layout="icon-bottom">
+                <ion-label>Dezerti</ion-label>
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
+</ion-content>
